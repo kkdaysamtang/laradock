@@ -11,7 +11,7 @@ APP_CODE_PATH_HOST=../
 APP_CODE_PATH_CONTAINER=/var/www:cached
 
 # Choose storage path on your machine. For all storage systems
-DATA_PATH_HOST=~/.laradock/data
+DATA_PATH_HOST=~/.kkdock/data
 
 ### Drivers ################################################
 
@@ -47,7 +47,7 @@ DOCKER_HOST_IP=10.0.75.1
 ### Remote Interpreter ####################################
 
 # Choose a Remote Interpreter entry matching name. Default is `laradock`
-PHP_IDE_CONFIG=serverName=laradock
+PHP_IDE_CONFIG=serverName=kkdock
 
 ### Windows Path ##########################################
 
@@ -132,7 +132,7 @@ PHP_FPM_INSTALL_SOAP=false
 PHP_FPM_INSTALL_GMP=false
 PHP_FPM_INSTALL_EXIF=false
 PHP_FPM_INSTALL_AEROSPIKE=false
-PHP_FPM_INSTALL_PGSQL=false
+PHP_FPM_INSTALL_PGSQL=true
 PHP_FPM_INSTALL_POSTGRES=false
 PHP_FPM_INSTALL_GHOSTSCRIPT=false
 PHP_FPM_INSTALL_LDAP=false
@@ -203,9 +203,9 @@ MARIADB_ENTRYPOINT_INITDB=./mariadb/docker-entrypoint-initdb.d
 
 ### POSTGRES ##############################################
 
-POSTGRES_DB=default
-POSTGRES_USER=default
-POSTGRES_PASSWORD=secret
+POSTGRES_DB=kkdb
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=kkday
 POSTGRES_PORT=5432
 
 ### RABBITMQ ##############################################
