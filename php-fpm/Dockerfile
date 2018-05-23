@@ -414,6 +414,11 @@ RUN apt-get clean && \
 
 RUN usermod -u 1000 www-data
 
+ADD ca/KKday_Root_CA.crt /usr/local/share/ca-certificates/KKday_Root_CA.crt
+USER root
+RUN apt-get install -y ca-certificates
+RUN update-ca-certificates
+
 WORKDIR /var/www
 
 CMD ["php-fpm"]
