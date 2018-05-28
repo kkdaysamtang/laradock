@@ -38,11 +38,11 @@ sed "1,/root \/var\/www\/laravel\/public/s/root \/var\/www\/laravel\/public/root
 
 echo -e " --- Create new be2-ci-conf : Replace access log --- "
 mv -f kkday-be2-ci.conf kkday-be2-ci.tmp.conf
-sed '1,/laravel_access.log/s/laravel_access.log/be2-api-access.log/' kkday-be2-ci.tmp.conf > kkday-be2-ci.conf
+sed '1,/laravel_access.log/s/laravel_access.log/be2-ci-access.log/' kkday-be2-ci.tmp.conf > kkday-be2-ci.conf
 
 echo -e " --- Create new be2-ci-conf : Replace access log --- "
 mv -f kkday-be2-ci.conf kkday-be2-ci.tmp.conf
-sed '1,/laravel_error.log/s/laravel_error.log/be2-api-error.log/' kkday-be2-ci.tmp.conf > kkday-be2-ci.conf
+sed '1,/laravel_error.log/s/laravel_error.log/be2-ci-error.log/' kkday-be2-ci.tmp.conf > kkday-be2-ci.conf
 
 rm kkday-be2-ci.tmp.conf
 
