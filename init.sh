@@ -48,11 +48,3 @@ rm kkday-be2-ci.tmp.conf
 
 echo -e " --- Create new be2-ci-conf : Done --- \n"
 
-cd $BASEDIR
-
-echo -e " --- Create .env : Start --- "
-cp env-example .env.bak
-sed '1,/6379/s/6379/63799/' .env.bak > .env
-rm .env.bak
-
-echo -e " --- Create .env : Done --- "
