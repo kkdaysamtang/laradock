@@ -85,9 +85,9 @@ RUN if [ ${INSTALL_PG_CLIENT} = true ]; then \
 ARG INSTALL_XDEBUG=false
 
 RUN if [ ${INSTALL_XDEBUG} = true ]; then \
-    # Install the xdebug extension
-    pecl install xdebug && \
-    docker-php-ext-enable xdebug \
+    if echo ${PHP_VERSION} | grep '^5\.6\.\?'; then \
+        pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug; else \
+        pecl install xdebug && docker-php-ext-enable xdebug; fi \
 ;fi
 
 # Copy xdebug configuration for remote debugging
