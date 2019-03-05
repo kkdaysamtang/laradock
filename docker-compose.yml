@@ -223,10 +223,12 @@ services:
         - "${NGINX_HOST_HTTPS_PORT}:443"
       depends_on:
         - php-fpm
-      networks:
-        - frontend
-        - backend
         - php-fpm5
+      networks:
+        frontend:
+        backend:
+          aliases:
+            - 'api-fs.docker.kkday.com'
 
 ### Blackfire ########################################
     blackfire:
@@ -715,7 +717,7 @@ services:
       networks:
         - frontend
         - backend
-        
+
 ### Solr ################################################
     solr:
       build:
