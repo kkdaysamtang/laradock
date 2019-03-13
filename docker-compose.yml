@@ -109,7 +109,7 @@ services:
       build:
         context: ./php-fpm
         args:
-          - PHP_VERSION=7.2
+          - PHP_VERSION=${PHP_VERSION}
           - INSTALL_XDEBUG=${PHP_FPM_INSTALL_XDEBUG}
           - INSTALL_BLACKFIRE=${INSTALL_BLACKFIRE}
           - INSTALL_SOAP=${PHP_FPM_INSTALL_SOAP}
@@ -136,7 +136,7 @@ services:
           - INSTALL_IMAGE_OPTIMIZERS=${PHP_FPM_INSTALL_IMAGE_OPTIMIZERS}
           - INSTALL_IMAGEMAGICK=${PHP_FPM_INSTALL_IMAGEMAGICK}
       volumes:
-        - ./php-fpm/php72.ini:/usr/local/etc/php/php.ini
+        - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
       expose:
         - "9000"
